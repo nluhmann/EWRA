@@ -11,11 +11,9 @@ outfile = sys.argv[2]
 #min number of bp
 limit = sys.argv[3]
 
-#
-secondOutfile = sys.argv[4]
 
 #contig length file
-ancientContigLengthFile = sys.argv[5]
+ancientContigLengthFile = sys.argv[4]
 
 contiglist = []
 contiglengths = []
@@ -42,13 +40,6 @@ file.close()
 file = open(outfile, "w")
 for item in contiglist:
 	file.write(item)
-file.close()
-
-file = open(secondOutfile, "w")
-for item in contiglist:
-	if ">" in item:
-		array = item.split(' ')
-		file.write(array[0][1:]+"\n")
 file.close()
 
 file = open(ancientContigLengthFile, "w")
