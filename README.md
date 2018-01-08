@@ -28,3 +28,11 @@ run_program.sh -fasta <extant_genomes> -contigs <aDNA_contigs> -dot <assembly_gr
 Note that if an alternative graph is used different from an assembly graph in dot format (produced by an assembly tool), the pipeline can easily be adapted by skipping steps in the bash script and providing alternative parsing.
 
 
+## Reproducing experiments reconstructing Yersinia pestis ancestral genomes (paper to be published)
+1) Download assembled reference genomes (multiple-fasta file)
+
+2) Download aDNA dataset and run read assembly (contigs in multiple-fasta file and assembly graph in dot format)
+
+3) Run EWRA
+
+
