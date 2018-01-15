@@ -258,7 +258,7 @@ def splitEdge(parentNode, childNode):
 
 def computeLeafEdgeWeight(tree):
 #TODO: make better
-	return 0.05
+	return 0.01
 
 
 def printStructure(tree):
