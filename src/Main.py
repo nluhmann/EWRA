@@ -115,7 +115,6 @@ for adjacency in bottomUpTrees:
 
 
 
-
 # 6. for each internal node, collect adjacencies
 speciesHash = {}
 for adjacency in bottomUpTrees:

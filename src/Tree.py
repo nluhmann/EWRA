@@ -83,7 +83,7 @@ def bottomUpLabeling_Sankoff(tree):
 
 def topDownLabeling_Sankoff(tree):
 	root = True
-	for node in tree.iternodes(order="preorder"):	
+	for node in tree.iternodes(order="preorder"):
 		if root:			
 			if node.getData("C1") < node.getData("C0"):
 				node.addData("final_s",1)

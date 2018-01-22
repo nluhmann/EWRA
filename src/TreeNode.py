@@ -57,7 +57,7 @@ class TreeNode:
 	
 		
 	def getParentAnnotation(self):
-		return self.parent.getData("final")
+		return self.parent.getData("final_s")
 		
 	def isSpecial(self):
 		return self.special
