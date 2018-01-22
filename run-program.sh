@@ -89,7 +89,10 @@ mkdir -p $OUTPUT_SCAFFOLDS
 echo "Filtering assembly contigs"
 
 #filter contigs longer than 500bp
-python $SRC/biggestContigs.py $CONTIGS $FILTERED_CONTIGS 500 $FILTERED_CONTIGS_IDS $ANCIENT_CONTIGS_LENGTH
+python $SRC/biggestContigs.py $CONTIGS $FILTERED_CONTIGS 500 $ANCIENT_CONTIGS_LENGTH
+
+#store IDs of all filtered contigs
+grep ">" $FILTERED_CONTIGS | cut -d " " -f 1 | cut -c 2- > $FILTERED_CONTIGS_IDS
 
 #get all contig ids from original file
 biggestContigID=`tail -n 2 $CONTIGS | grep ">" | awk '{ print $1 }' | cut -c 2-`
