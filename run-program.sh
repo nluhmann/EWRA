@@ -27,13 +27,14 @@ EXTANT_GENOMES="";
 CONTIGS="";
 GRAPH="";
 TREE="";
+WEIGHT="";
 
 
 #read parameters from input and check if all parameters are provided
-if [ $# -ne 8 ]
+if [ $# -ne 10 ]
 then
    echo "Please provide the expected parameter!"
-   echo "usage: $0 -fasta <extant_genomes.fa> "
+   echo "usage: $0 -fasta <extant_genomes.fa> -contigs <contigs> -dot <assembly-graph> -tree <nwk-file> -weight <weight>"
    exit 1
 fi
 while [ $# -gt 0 ]
@@ -43,10 +44,11 @@ do
 	-contigs) CONTIGS="$2"; shift;;
 	-dot) GRAPH="$2"; shift;;
 	-tree) TREE="$2"; shift;;
+	-weight) WEIGHT="$2"; shift;;
 	--)	shift; break;;
 	-*)
 	    echo >&2 \
-	    "usage: $0 -sl <segmentLength> -r <reference.fasta> -m <mapping.sam/bam>"
+	    "usage: $0  -fasta <extant_genomes.fa> -contigs <contigs> -dot <assembly-graph> -tree <nwk-file> -weight <weight>"
 	    exit 1;;
 	*)  break;;	# terminate while loop
     esac
@@ -144,5 +146,5 @@ echo "Compute adjacency set for internal nodes of the phylogeny"
 python $SRC/extractAdjacencies.py $FILTERED_FAMILIES $PRUNED_GRAPH $TREE $ALL_ADJACENCIES
 
 #compute Fitch on extracted adjacencies
-python $SRC/Main.py $TREE $ALL_ADJACENCIES $OUTPUT_ADJACENCIES $OUTPUT_SCAFFOLDS 
+python $SRC/Main.py $TREE $ALL_ADJACENCIES $OUTPUT_ADJACENCIES $OUTPUT_SCAFFOLDS $WEIGHT
 
