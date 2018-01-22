@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import TreeReader
-import TreeNode
 import Tree
 import copy
 import networkx as nx
@@ -13,6 +12,10 @@ tree = sys.argv[1]
 allAdjacencies = sys.argv[2]
 outputAdjacencies = sys.argv[3]
 outputScaffolds = sys.argv[4]
+if sys.argv[5]:
+	newWeight = sys.argv[5]
+else:
+	newWeight = 0
 
 
 
@@ -29,16 +32,8 @@ tree = TreeReader.annotateInternalNodes(tree)
 # 	print "-------"
 
 
-
-
-
-
 # 2. Rerooting & Attaching assembly graph leaf
-
-
-
-
-newTree = Tree.reroot(tree)
+newTree = Tree.reroot(tree, newWeight)
 #Tree.printStructure(newTree)
 
 
@@ -77,7 +72,7 @@ print "Number of different adjacencies in total (adjacencies present in at least
 
 
 # 4. collect all adjacencies labeled 1 or 1,0 at root
-C1Padjacencies_s = []
+C1Padjacencies = []
 for adjacency in bottomUpTrees:
 	tree = bottomUpTrees[adjacency]
 	if tree.getData("C1") < tree.getData("C0"):

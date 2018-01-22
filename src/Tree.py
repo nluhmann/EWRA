@@ -117,7 +117,7 @@ def testTopDown(tree):
 
 
 
-def reroot(tree):
+def reroot(tree, newWeight):
 	#remove old root and join edges
 	children = tree.getChildren()
 	
@@ -146,7 +146,7 @@ def reroot(tree):
 				
 		
 
-			newRoot = splitEdge(save,j)
+			newRoot = splitEdge(save,j, newWeight)
 			
 			#remove all nodes that have only one child
 			for j in newRoot.iternodes(order="postorder"):
@@ -231,7 +231,7 @@ def addLeaf(newRoot):
 	return newRoot	
 
 #split the edge at which the new root should be created, split edge weight for two new outgoing edges
-def splitEdge(parentNode, childNode):
+def splitEdge(parentNode, childNode, newWeight):
 	edgeWeight = childNode.getWeight()
 	newRoot = TreeNode(True)
 	newRoot.setID("root")
@@ -250,7 +250,10 @@ def splitEdge(parentNode, childNode):
 	newLeaf = TreeNode(True)
 	newLeaf.setParent(newRoot)
 	newLeaf.setID("AssemblyGraphLeaf")
-	newLeaf.setWeight(computeLeafEdgeWeight(newRoot))
+	if newWeight == 0:
+		newLeaf.setWeight(computeLeafEdgeWeight(newRoot))
+	else:
+		newLeaf.setWeight(newWeight)
 	newRoot.addChildren(newLeaf)
 	return newRoot	
 
