@@ -167,7 +167,6 @@ def findAdjacencies(specieslist, hash, assemblyhash, connected):
 	
 	for contig in assemblyhash:
 		liste = assemblyhash[contig]
-		print liste
 		#only one marker on the contig, only need to check graph connections:
 		if len(liste) == 1:
 			#check connected contigs in the graph in both directions
@@ -272,7 +271,6 @@ def checkAssemblyGraphConnections(pluscontig, minuscontig, leftExtrem, rightExtr
 						firstExtrem = liste[0][1][0]
 						tupel = (leftExtrem, firstExtrem)
 						#print tupel
-						#here is something wrong!
 						revtupel = (firstExtrem, leftExtrem)
 						adjacencies = setAdjacencies(tupel, revtupel, adjacencies)
 						interCon.append(tupel)
@@ -308,7 +306,6 @@ def checkAssemblyGraphConnections(pluscontig, minuscontig, leftExtrem, rightExtr
 					interCon.append(revtupel)
 				else:
 					print "error"
-	print "----"	
 	return adjacencies
 	
 	
@@ -331,7 +328,6 @@ def writeAdjacencies(specieslist, adjacencies):
 	file.close()	
 
 ###########################################################################################################################################################
-# TODO: nachdenken
 def numberOfConflictingAdjacencies(adjacencies):
 	conflicts = 0
 	hash = {}
