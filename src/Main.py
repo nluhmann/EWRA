@@ -12,7 +12,7 @@ tree = sys.argv[1]
 allAdjacencies = sys.argv[2]
 outputAdjacencies = sys.argv[3]
 outputScaffolds = sys.argv[4]
-if len(sys.argv) > 4:
+if len(sys.argv) > 5:
 	newWeight = sys.argv[5]
 else:
 	newWeight = 0
