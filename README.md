@@ -28,7 +28,7 @@ run_program.sh -fasta <extant_genomes> -contigs <aDNA_contigs> -dot <assembly_gr
 Note that if an alternative graph is used different from an assembly graph in dot format (produced by an assembly tool), the pipeline can easily be adapted by skipping steps in the bash script and providing alternative parsing.
 
 
-## Reproducing experiments reconstructing Yersinia pestis ancestral genomes (paper to be published)
+## Reproducing experiments reconstructing Yersinia pestis ancestral genomes[1]
 
 The experiment presented in [1] can be run following the steps below. 
 
@@ -48,6 +48,7 @@ a coordinates file for all filled gaps will be produced, which can be parsed to 
 
 ## References
 [1] Luhmann N, Chauve C, Stoye J, and Wittler R. "Scaffolding of Ancient Contigs and Ancestral Reconstruction in a Phylogenetic Framework". Under review. 2018.
+
 [2] Bos KI, Schuenemann VJ, Golding GB, Burbano HA, Waglechner N, Coombes BK, McPhee JB, DeWitte SN, Meyer M, Schmedes S, Wood J. "A draft genome of Yersinia pestis from victims of the Black Death". Nature. 2011 Oct 27;478(7370):506-10.
 
 
