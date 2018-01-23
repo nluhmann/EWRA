@@ -37,7 +37,7 @@ The experiment presented in [1] can be run following the steps below.
 We provide all required input files to run EWRA in this repository in the experiments folder.
 
 ```
-run_program.sh -tree ./experiments/input/pestis_tree.txt -contigs ./experiments/input/unitigsGreater500.fa -fasta ./experiments/input/extant_genomes.fa -dot ./experiments/input/pestis_k21.dot -weight 0.005
+run_program.sh -tree ./experiments/input/pestis_tree.txt -contigs ./experiments/input/unitigsGreater500.fa -fasta ./experiments/input/extant_genomes.fa -dot ./experiments/input/pestis_k21.dot -weight 0.05
 ```
 
 2) Run EWRA with marker assembly graph
