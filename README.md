@@ -32,17 +32,18 @@ Note that if an alternative graph is used different from an assembly graph in do
 
 The experiment presented in [1] can be run following the steps below. 
 
-# Run EWRA with contig assembly graph
+### Run EWRA with contig assembly graph
 
-We provide all required input files to run EWRA in this repository. The raw data can be downloaded and assembled using scripts in ./experiments/preprocessing/
+We provide all required input files to run EWRA in this repository in the experiments folder.
 
 ```
 run_program.sh -tree ./experiments/input/pestis_tree.txt -contigs ./experiments/input/unitigsGreater500.fa -fasta ./experiments/input/extant_genomes.fa -dot ./experiments/input/pestis_k21.dot -weight 0.005
 ```
 
-# Run EWRA with marker assembly graph
+### Run EWRA with marker assembly graph
 
-To infer the marker assembly graph, [AGapEs](https://github.com/nluhmann/AGapEs) can be used to analyse the gap coverage for all potentially adjacent marker pairs.  
+To infer the marker assembly graph, [AGapEs](https://github.com/nluhmann/AGapEs) can be used to analyse the gap coverage for all potentially adjacent marker pairs. Following the instructions for this tool, 
+a coordinates file for all filled gaps will be produced, which can be parsed to use with EWRA.
 
 
 ## References
