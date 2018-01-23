@@ -28,7 +28,7 @@ run_program.sh -fasta <extant_genomes> -contigs <aDNA_contigs> -dot <assembly_gr
 Note that if an alternative graph is used different from an assembly graph in dot format (produced by an assembly tool), the pipeline can easily be adapted by skipping steps in the bash script and providing alternative parsing.
 
 
-## Reproducing experiments reconstructing Yersinia pestis ancestral genomes[1]
+## Reconstructing Yersinia pestis ancestral genomes [1]
 
 The experiment presented in [1] can be run following the steps below. 
 
